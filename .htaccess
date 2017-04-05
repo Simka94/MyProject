@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteBase /
+
+RewriteRule ^(en)/(.*)$  $2?lang=$1 [L,QSA]
+RewriteRule ^(.*)$  $1?lang=кг [L,QSA]

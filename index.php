@@ -33,13 +33,11 @@
         include_once 'langs/lang_ru.php';
     };
 ?>
-<!--
     <div class="preloader">
         <div class="loared_container">
             <div class="loader"></div>
         </div> 
     </div>
--->
     <div class="main_container">
         <div class="navigation_container">
             <div class="navigation">
@@ -97,7 +95,7 @@
                 </div>
                 <div class="work vienterir">
                 </div>
-                <div class="work rp">
+                <div class="work gk">
                 </div>
                 <div class="work sib">
                 </div>

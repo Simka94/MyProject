@@ -254,8 +254,7 @@ body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   position: relative;
-  overflow: hidden;
-  background-size: 200px; }
+  overflow: hidden; }
 
 .portfolio:after {
   display: table;
@@ -266,25 +265,40 @@ body {
   margin-bottom: 20px; }
 
 .fbs {
-  background: #000 url(/img/fbs.png) no-repeat center center; }
+  background: #000 url(/img/fbs.png) no-repeat center center;
+  background-size: 200px; }
 
 .didius {
-  background: #000 url(/img/didius.png) no-repeat center center; }
+  background: #000 url(/img/didius.png) no-repeat center center;
+  background-size: 170px; }
 
 .school {
-  background: #000 url(/img/school.png) no-repeat center center; }
+  background: #000 url(/img/school.png) no-repeat center center;
+  background-size: 250px; }
 
 .rollo {
-  background: #000 url(/img/rollo.png) no-repeat center center; }
+  background: #000 url(/img/rollo.png) no-repeat center center;
+  background-size: 120px; }
 
 .sayhi {
-  background: #000 url(/img/sayhi.png) no-repeat center center; }
+  background: #000 url(/img/sayhi.png) no-repeat center center;
+  background-size: 110px; }
+
+.ubernet {
+  background: #000 url(/img/uber.png) no-repeat center center;
+  background-size: 220px; }
 
 .vienterir {
-  background: #000 url(/img/vienterir.png) no-repeat center center; }
+  background: #000 url(/img/vienterir.png) no-repeat center center;
+  background-size: 200px; }
+
+.gk {
+  background: #000 url(/img/gk.png) no-repeat center center;
+  background-size: 120px; }
 
 .sib {
-  background: #000 url(/img/sib.png) no-repeat center center; }
+  background: #000 url(/img/sib.png) no-repeat center center;
+  background-size: 200px; }
 
 .contacts {
   display: -webkit-box;
