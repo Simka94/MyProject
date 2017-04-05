@@ -13,6 +13,7 @@
     <meta property="og:image:height" content="200">
     <meta property="fb:app_id" content="280649482385051"> 
     <meta property="og:description" content="Front-end Developer producing high quality responsive websites.">
+    <link rel="alternate" hreflang="<?php echo ($_GET['lang'] == 'en') ? 'ru' : 'en'; ?>" href="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$alt = ($_GET['lang'] == 'en') ? '/' : '/en/'; ?>">
     <link rel="canonical" href="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/'; ?>"/>
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
