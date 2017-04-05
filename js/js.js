@@ -1,8 +1,11 @@
 $(document).ready(function(){
     setTimeout(function(){
-        $('.preloader').addClass('close_preloader');
-    },2000);
-    
+    var loader = $('.preloader');
+        loader.addClass('close_preloader');
+        setTimeout(function(){
+            loader.remove();
+        },2000);
+    },2000);    
     
     var $root = $('body');
     $('.nav_link').click(function() {
@@ -11,7 +14,6 @@ $(document).ready(function(){
         }, 500);
         return false;
     });
-    
     
     var sections = $('.section_container'),
       nav = $('.nav li');
@@ -31,15 +33,15 @@ $(document).ready(function(){
             $(this).addClass('active_anim');
             nav.find('a[href="#'+$(this).attr('id')+'"]').parent().addClass('active_anim');
             if($(this).attr('id') == 'main'){
-                $('#animator').css({'top':'14px'});
+                $('#animator').css({'top':'16px'});
             }else if($(this).attr('id') == 'about'){
-                $('#animator').css({'top':'60px'});
+                $('#animator').css({'top':'63px'});
             }else if($(this).attr('id') == 'skills'){
-                $('#animator').css({'top':'105px'});
+                $('#animator').css({'top':'110px'});
             }else if($(this).attr('id') == 'portfolio'){
-                $('#animator').css({'top':'150px'});
+                $('#animator').css({'top':'157px'});
             }else if($(this).attr('id') == 'contacts'){
-                $('#animator').css({'top':'195px'});
+                $('#animator').css({'top':'204px'});
             }
         }
       });
