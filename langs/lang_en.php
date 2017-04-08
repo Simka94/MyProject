@@ -7,6 +7,6 @@ define('works','works');
 define('contacts','contacts');
 
 define('href_en','<span>EN</span>');
-define('href_ru','<a href="/">RU</a>');
+define('href_ru','<a href="/ru/">RU</a>');
 
 ?>
