@@ -1,4 +1,6 @@
 <?php
+define('title','Aleksandr Simak - Frontend Developer');
+define('description','Front-end Developer producing high quality responsive websites.');
 
 define('main','main');
 define('about','about');
