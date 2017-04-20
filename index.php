@@ -30,14 +30,26 @@
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;subset=cyrillic" rel="stylesheet">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+    <script src="js/jquery.slideandswipe.min.js"></script>
+    <script src="js/jquery.slideandswipe.js"></script>
+    <script src="js/js.js"></script>
 </head>
 <body>  
+<!--
     <div class="preloader">
         <div class="loared_container">
             <div class="loader"></div>
         </div> 
     </div>
+-->
     <div class="main_container">
+        <div class="nav_overlay"></div>
+        <div class="close_nav ssm-toggle-nav">
+            <span class="top_close"></span>
+            <span class="center_close"></span>
+            <span class="bottom_close"></span>
+        </div>
         <div class="navigation_container">
             <div class="navigation">
                 <div class="logo">
@@ -49,19 +61,16 @@
                     <ul class="nav">
                         <div id="animator"></div>
                         <li class="active_anim">
-                            <a class="nav_link" href="#main"><?php echo main; ?></a>
+                            <a class="nav_link" rel="nofollow" href="#main"><?php echo main; ?></a>
                         </li>
                         <li>
-                            <a class="nav_link" href="#about"><?php echo about; ?></a>
+                            <a class="nav_link" rel="nofollow" href="#about"><?php echo about; ?></a>
                         </li>
                         <li>
-                            <a class="nav_link" href="#skills"><?php echo skills; ?></a>
+                            <a class="nav_link" rel="nofollow" href="#portfolio"><?php echo works; ?></a>
                         </li>
                         <li>
-                            <a class="nav_link" href="#portfolio"><?php echo works; ?></a>
-                        </li>
-                        <li>
-                            <a class="nav_link" href="#contacts"><?php echo contacts; ?></a>
+                            <a class="nav_link" rel="nofollow" href="#contacts"><?php echo contacts; ?></a>
                         </li>
                     </ul>
                 </div>
@@ -73,12 +82,10 @@
         </div>
         <div class="section">
             <div id="main" class="main section_container">
-                <video id="video" autoplay loop>
-                    <source src="/video/video.mp4" type="video/mp4">
-                </video>
-                <div class="main_text">Меня зовут Саша и я Frontend Developer </div>
+                <div class="scale_img"></div>
+                <div class="main_text"><h1><?php echo main_text; ?></h1></div>
                 <div class="mouse_container">
-                    <a class="nav_link" href="#about">
+                    <a class="nav_link" rel="nofollow" href="#about">
                         <div class="mouse">
                             <div class="wheel"></div>
                         </div>
@@ -86,10 +93,9 @@
                 </div>
             </div>
             <div id="about" class="about section_container">
-                <div class="about_text">asdasdasdasd</div>
-            </div>
-            <div id="skills" class="skills section_container">
-                <div class="skills_text">asdasdasdasd</div>
+                <div class="about_text">
+                    Меня зовут Александр мне 23 года и я профессионально занимаюсь созданием сайтов уже более двух лет. Имею большой опыт в создании адаптивных, кроссбраузерных сайтов. В моем арсенале <span>HTML</span>, <span>CSS</span>, <span>JS</span>, <span>jQuery</span>, <span>AJAX</span>, <span>PHP</span>, <span>HTML</span>, <span>Git</span> Примеры моих последних работ вы можете посмотреть ниже.
+                </div>
             </div>
             <div id="portfolio" class="portfolio section_container">
                 <div class="work fbs">
@@ -99,7 +105,7 @@
                     <span class="anim_4"></span>
                     <div class="work_overlay">
                         <div class="work_link">
-                            <a href="https://fbs-tax.com/" target="_blank"><?php echo look; ?></a>
+                            <a href="https://fbs-tax.com/" rel="nofollow" target="_blank"><?php echo look; ?></a>
                         </div>
                     </div>
                 </div>
@@ -110,7 +116,7 @@
                     <span class="anim_4"></span>
                     <div class="work_overlay">
                         <div class="work_link">
-                            <a href="http://www.didiusdesign.com/" target="_blank"><?php echo look; ?></a>
+                            <a href="http://www.didiusdesign.com/" rel="nofollow" target="_blank"><?php echo look; ?></a>
                         </div>
                     </div>
                 </div>
@@ -121,7 +127,7 @@
                     <span class="anim_4"></span>
                     <div class="work_overlay">
                         <div class="work_link">
-                            <a href="http://smartschool.in.ua/" target="_blank"><?php echo look; ?></a>
+                            <a href="http://smartschool.in.ua/" rel="nofollow" target="_blank"><?php echo look; ?></a>
                         </div>
                     </div>
                 </div>
@@ -132,7 +138,7 @@
                     <span class="anim_4"></span>
                     <div class="work_overlay">
                         <div class="work_link">
-                            <a href="http://rollowolf.com/" target="_blank"><?php echo look; ?></a>
+                            <a href="http://rollowolf.com/" rel="nofollow" target="_blank"><?php echo look; ?></a>
                         </div>
                     </div>
                 </div>
@@ -143,7 +149,7 @@
                     <span class="anim_4"></span>
                     <div class="work_overlay">
                         <div class="work_link">
-                            <a href="http://media-talks.say-hi.me/" target="_blank"><?php echo look; ?></a>
+                            <a href="http://media-talks.say-hi.me/" rel="nofollow" target="_blank"><?php echo look; ?></a>
                         </div>
                     </div>
                 </div>
@@ -154,7 +160,7 @@
                     <span class="anim_4"></span>
                     <div class="work_overlay">
                         <div class="work_link">
-                            <a href="http://ubernet.com.ua/" target="_blank"><?php echo look; ?></a>
+                            <a href="http://ubernet.com.ua/" rel="nofollow" target="_blank"><?php echo look; ?></a>
                         </div>
                     </div>
                 </div>
@@ -165,7 +171,7 @@
                     <span class="anim_4"></span>
                     <div class="work_overlay">
                         <div class="work_link">
-                            <a href="https://vinterior.com.ua/" target="_blank"><?php echo look; ?></a>
+                            <a href="https://vinterior.com.ua/" rel="nofollow" target="_blank"><?php echo look; ?></a>
                         </div>
                     </div>
                 </div>
@@ -176,7 +182,7 @@
                     <span class="anim_4"></span>
                     <div class="work_overlay">
                         <div class="work_link">
-                            <a href="https://golden-key-invest.com/" target="_blank"><?php echo look; ?></a>
+                            <a href="https://golden-key-invest.com/" rel="nofollow" target="_blank"><?php echo look; ?></a>
                         </div>
                     </div>
                 </div>
@@ -187,7 +193,7 @@
                     <span class="anim_4"></span>
                     <div class="work_overlay">
                         <div class="work_link">
-                            <a href="http://sib.community/" target="_blank"><?php echo look; ?></a>
+                            <a href="http://sib.community/" rel="nofollow" target="_blank"><?php echo look; ?></a>
                         </div>
                     </div>
                 </div>
@@ -197,12 +203,12 @@
                     <div id="g_map"></div>
                     <div class="form_container">
                         <div class="form_text">
-                            Вы мне можете позвонить по номеру 0937267689 или...
+                            Вы мне можете позвонить по номеру +380937267689 или...
                         </div>
                         <form class="contact_form">
-                            <input name="user_name" placeholder="Name" type="text">
+                            <input name="user_name" placeholder="<?php echo name; ?>" type="text">
                             <input name="user_email" placeholder="E-mail" type="text">
-                            <button type="submit">Send</button>
+                            <button type="submit"><?php echo send; ?></button>
                         </form>
                         <div class="socials">
                             <a href="https://vk.com/id44597478" target="_blank">
@@ -220,8 +226,6 @@
             </div>
         </div> 
     </div>
-<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGSztsq2kf9XCZGarVXvP1Tq_hPsmImsQ"></script>
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
-<script async src="js/js.js"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGSztsq2kf9XCZGarVXvP1Tq_hPsmImsQ"></script>
 </body>
 </html>

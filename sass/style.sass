@@ -17,16 +17,16 @@ body
     right: 0
     z-index: 10000
     bottom: 0
-    background: #000
+    background: #222222
     
 .loader
     width: 100px  
     height: 100px
     border-radius: 50%
     border-bottom: 2px solid #fff
-    border-left: 2px solid #383838
-    border-top: 2px solid #383838
-    border-right: 2px solid #383838
+    border-left: 2px solid #161616
+    border-top: 2px solid #161616
+    border-right: 2px solid #161616
     position: relative
     box-sizing: border-box
     animation: load 2s infinite linear
@@ -40,9 +40,9 @@ body
         border-radius: 50%
         box-sizing: border-box
         border-bottom: 2px solid #fff
-        border-left: 2px solid #383838
-        border-top: 2px solid #383838
-        border-right: 2px solid #383838
+        border-left: 2px solid #161616
+        border-top: 2px solid #161616
+        border-right: 2px solid #161616
         position: absolute
         animation: load 1s infinite linear
         content: ''
@@ -56,9 +56,9 @@ body
         border-radius: 50%
         box-sizing: border-box
         border-bottom: 2px solid #fff
-        border-top: 2px solid #383838
-        border-left: 2px solid #383838
-        border-right: 2px solid #383838
+        border-top: 2px solid #161616
+        border-left: 2px solid #161616
+        border-right: 2px solid #161616
         position: absolute
         animation: load 2s infinite linear
         content: ''
@@ -71,7 +71,7 @@ body
     
     
 .close_preloader
-    transform: translateY(-200%)  
+    opacity: 0
  
 .main_container
     display: flex
@@ -79,10 +79,23 @@ body
 .navigation_container
     width: 200px
     height: 100vh
+    transition: all .3s ease
+    z-index: 1000
     min-width: 200px
+    
+.nav_overlay
+    display: none
+    position: fixed
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    background: rgba(0,0,0,0.7)
+    z-index: 500
     
 .navigation
     position: fixed
+    background: #fff
     top: 0
     left: 0
     width: 200px
@@ -154,49 +167,45 @@ body
 .section
     flex-grow: 1
     
-.main
-    position: relative
-    overflow: hidden
+.scale_img
+    background: url(/img/chain.jpg) no-repeat center bottom
     background-size: cover
-    background: rgba(0,0,0,0.7)
+    top: 0
+    bottom: 0
+    z-index: 0
+    left: 0
+    right: 0
+    position: absolute
+    animation: scale 20s linear forwards
+    
+@keyframes scale
+    0%   
+        transform: scale(1.2)
+    100%  
+        transform: scale(1)
+    
+.main
+    overflow: hidden
+    position: relative
     display: flex
     justify-content: center
     align-items: center
     
-#video
-    position: absolute
-    top: 50%
-    left: 50%
-    z-index: -1
-    min-width: 100%
-    min-height: 100%
-    width: auto
-    height: auto
-    transform: translate(-50%, -50%)
-    
 .main_text
-    color: #fff
-    font-size: 38px
-    text-shadow: 0px 0px 6px #000
-    &:after
-        content: '|'
-        animation: caretPulsate 1s linear infinite
+    h1
+        color: #fff
+        font-weight: 500
+        font-size: 38px
+        position: relative
+        z-index: 1
+        text-shadow: 0px 0px 8px #000
     
-@keyframes caretPulsate 
-    0%   
-        opacity: 1
-    50%  
-        opacity: 1
-    60%  
-        opacity: 0
-    100%  
-        opacity: 0
 
 
 .mouse_container
     position: absolute
     left: 0
-    right: 0
+    right: 0 
     text-align: center
     bottom: 20px
     a
@@ -236,22 +245,18 @@ body
         transform: translateY(12px)
     
 .about
-    background: #000000
-    display: flex
-    justify-content: center
-    align-items: center
-    
-.skills
-    background: #000000
+    background: #000
     display: flex
     justify-content: center
     align-items: center
     
 .about_text
     color: #fff
+    max-width: 60%
     
-.skills_text
+.skills_container
     color: #fff
+    width: 40%
     
     
 .active_anim
@@ -301,15 +306,14 @@ body
 .work_link
     position: absolute
     left: 50%
-    bottom: 30%
+    bottom: 25%
     transform: translateX(-50%)
     a
         color: #fff
         text-decoration: none
         border: 2px solid #fff
-        padding: 5px 30px
-        text-transform: uppercase
-        border-radius: 6px
+        padding: 5px 20px
+        display: block
         position: relative
         font-weight: 600
         transition: all .3s ease
@@ -370,7 +374,7 @@ body
     
     
 .portfolio
-    background: #000
+    background: #404040
     &:after
         display: table
         content: ''
@@ -421,7 +425,7 @@ body
     display: flex
     justify-content: center
     align-items: center
-    background: url(../img/robot.jpg)
+    background: url(../img/robot.jpg) no-repeat right center
     background-size: cover
 
 .contact_form
@@ -441,20 +445,24 @@ body
         height: 36px
         margin-bottom: 15px
         outline: none
+        &::placeholder
+            color: #fff
+            transition: text-indent .4s ease
+        &:focus::placeholder
+            text-indent: -50px
     button
         border: 2px solid #fff
-        border-radius: 6px
         background: none
         box-sizing: border-box
         color: #fff
         transition: all .3s ease
         height: 36px
-        text-transform: uppercase
         float: right
+        font-weight: 600
         cursor: pointer
         outline: none
         z-index: 1
-        padding: 0 30px
+        padding: 0 20px
         position: relative
         &:hover
             color: #404040
@@ -473,7 +481,7 @@ body
             height: 0%
      
 .contacts_container
-    width: 60%
+    width: 900px
     background: rgba(0,0,0,0.5)
         
 .form_container
@@ -481,7 +489,7 @@ body
     width: 40%
     height: 320px
     position: relative
-    padding: 40px
+    padding: 20px 40px
     box-sizing: border-box
     
 #g_map
@@ -494,18 +502,119 @@ body
     position: absolute
     left: 0
     right: 0
-    bottom: 20px
+    bottom: 15px
     a
         text-decoration: none
         display: inline-block
         margin: 0 2px
     svg
-        width: 36px
-        height: 36px
+        width: 30px
+        height: 30px
         transition: all .3s ease
         fill: #fff
         
 .form_text
     color: #fff
     margin-bottom: 10px
+    
+.close_nav
+    position: fixed
+    top: 10px
+    display: none
+    right: 10px
+    width: 30px
+    height: 23px
+    cursor: pointer
+    z-index: 1000
+    .center_close
+        height: 2px
+        background: #fff
+        display: block
+        position: absolute
+        top: 50%
+        transition: all .4s ease
+        margin-top: -1px
+        width: 100%
+        border-radius: 20px
+    .bottom_close
+        display: block
+        position: absolute
+        transition: all .4s ease
+        transform-origin: right center
+        bottom: 0px
+        border-radius: 20px
+        left: 0
+        background: #fff
+        height: 2px
+        width: 100%
+    .top_close
+        display: block
+        position: absolute
+        top: 0px
+        border-radius: 20px
+        transform-origin: right center
+        transition: all .4s ease
+        left: 0
+        background: #fff
+        height: 2px
+        width: 100%
+
+.opened
+    .center_close
+        opacity: 0
+    .top_close
+        transform: rotate(-45deg)
+    .bottom_close
+        transform: rotate(45deg)
+    
+     
+@media only screen and (max-width: 1279px)
+    .work_overlay
+        opacity: 1
+    .contacts
+        padding: 60px 0
+    .work
+        height: 260px
+        background-position: center 50px
+    .section_container
+        height: auto
+    .contacts_container
+        display: flex
+        flex-wrap: wrap
+        width: 400px
+        flex-direction: column-reverse
+    #g_map
+        width: 100%
+    .form_container
+        width: 100%
+    .close_nav
+        display: block
+    .navigation
+        position: absolute
+    .navigation_container
+        position: fixed
+        transform: translateX(-200px)
+    .main,.about
+        height: 100vh
+        
+    .anim_1,.anim_3
+        width: calc(100% - 20px)
+    .anim_2,.anim_4
+        height: calc(100% - 20px)
+        
+@media only screen and (max-width: 1000px)
+    .work
+        width: 50%
+        height: 280px 
+        
+@media only screen and (max-width: 768px)
+    .work
+        width: 100%
+    
+        
+@media only screen and (max-width: 480px)
+    .scale_img
+        animation: none
+    .contacts_container
+        width: 90%
         
