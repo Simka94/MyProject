@@ -30,19 +30,13 @@
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;subset=cyrillic" rel="stylesheet">
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
-    <script src="js/jquery.slideandswipe.min.js"></script>
-    <script src="js/jquery.slideandswipe.js"></script>
-    <script src="js/js.js"></script>
 </head>
 <body>  
-<!--
     <div class="preloader">
         <div class="loared_container">
             <div class="loader"></div>
         </div> 
     </div>
--->
     <div class="main_container">
         <div class="nav_overlay"></div>
         <div class="close_nav ssm-toggle-nav">
@@ -98,6 +92,9 @@
                 </div>
             </div>
             <div id="portfolio" class="portfolio section_container">
+                <video id="video" autoplay muted loop>
+                    <source src="video/video.mp4" type="video/mp4">
+                </video>
                 <div class="work fbs">
                     <span class="anim_1"></span>
                     <span class="anim_2"></span>
@@ -227,5 +224,8 @@
         </div> 
     </div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGSztsq2kf9XCZGarVXvP1Tq_hPsmImsQ"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
+<script src="http://labs.rampinteractive.co.uk/touchSwipe/jquery.touchSwipe.min.js"></script>
+<script src="js/js.js"></script>
 </body>
 </html>
