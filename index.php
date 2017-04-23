@@ -126,6 +126,17 @@
                         </div>
                     </div>
                 </div>
+                <div class="work gk">
+                    <span class="anim_1"></span>
+                    <span class="anim_2"></span>
+                    <span class="anim_3"></span>
+                    <span class="anim_4"></span>
+                    <div class="work_overlay">
+                        <div class="work_link">
+                            <a href="https://golden-key-invest.com/" rel="nofollow" target="_blank"><?php echo look; ?></a>
+                        </div>
+                    </div>
+                </div>
                 <div class="work rollo">
                     <span class="anim_1"></span>
                     <span class="anim_2"></span>
@@ -134,6 +145,17 @@
                     <div class="work_overlay">
                         <div class="work_link">
                             <a href="http://rollowolf.com/" rel="nofollow" target="_blank"><?php echo look; ?></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="work sib">
+                    <span class="anim_1"></span>
+                    <span class="anim_2"></span>
+                    <span class="anim_3"></span>
+                    <span class="anim_4"></span>
+                    <div class="work_overlay">
+                        <div class="work_link">
+                            <a href="http://sib.community/" rel="nofollow" target="_blank"><?php echo look; ?></a>
                         </div>
                     </div>
                 </div>
@@ -167,28 +189,6 @@
                     <div class="work_overlay">
                         <div class="work_link">
                             <a href="https://vinterior.com.ua/" rel="nofollow" target="_blank"><?php echo look; ?></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="work gk">
-                    <span class="anim_1"></span>
-                    <span class="anim_2"></span>
-                    <span class="anim_3"></span>
-                    <span class="anim_4"></span>
-                    <div class="work_overlay">
-                        <div class="work_link">
-                            <a href="https://golden-key-invest.com/" rel="nofollow" target="_blank"><?php echo look; ?></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="work sib">
-                    <span class="anim_1"></span>
-                    <span class="anim_2"></span>
-                    <span class="anim_3"></span>
-                    <span class="anim_4"></span>
-                    <div class="work_overlay">
-                        <div class="work_link">
-                            <a href="http://sib.community/" rel="nofollow" target="_blank"><?php echo look; ?></a>
                         </div>
                     </div>
                 </div>
