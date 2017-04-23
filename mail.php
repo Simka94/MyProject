@@ -1,4 +1,5 @@
 <?php
+$lang = $_GET["lang"];
 $user_name = $_POST["user_name"];
 $user_email = $_POST["user_email"];
 
@@ -13,4 +14,10 @@ $headers .= 'From: <webmaster@example.com>' . "\r\n";
 $headers .= 'Cc: myboss@example.com' . "\r\n";
 
 mail($to, $subject, $message, $headers);
+
+if($lang == 'en'){
+    echo "Thank you $user_name. Your message was sent.";
+}else{
+    echo "Спасибо $user_name. Ваше сообщение было отправлено.";
+}
 ?>

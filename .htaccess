@@ -1,4 +1,9 @@
+Options +FollowSymlinks
 RewriteEngine On
+
+RewriteCond %{HTTP_HOST} ^www.simka.esy.es
+RewriteRule ^(.*)$ http://simka.esy.es/$1 [R=permanent,L]
+
 RewriteBase /
 
 RewriteRule ^(ru)/(.*)$  $2?lang=$1 [L,QSA]

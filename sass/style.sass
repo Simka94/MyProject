@@ -3,10 +3,11 @@
     margin: 0
 
 body
-    overflow-x: hidden
     font-family: 'Open Sans', sans-serif
+    background: #000
+    transition: all .3s ease
 
-.preloader
+#preloader
     position: fixed 
     top: 0
     display: flex 
@@ -18,6 +19,51 @@ body
     z-index: 10000
     bottom: 0
     background: #222222
+    
+    
+.loader_in
+    width: 80px  
+    height: 80px
+    border-radius: 50%
+    border-bottom: 2px solid #fff
+    border-left: 2px solid #161616
+    border-top: 2px solid #161616
+    border-right: 2px solid #161616
+    position: relative
+    box-sizing: border-box
+    animation: load 2s infinite linear
+    &:after
+        width: 40px
+        height: 40px
+        left: 50%
+        top: 50%
+        margin-left: -20px
+        margin-top: -20px
+        border-radius: 50%
+        box-sizing: border-box
+        border-bottom: 2px solid #fff
+        border-left: 2px solid #161616
+        border-top: 2px solid #161616
+        border-right: 2px solid #161616
+        position: absolute
+        animation: load 1s infinite linear
+        content: ''
+    &:before
+        width: 60px
+        height: 60px
+        left: 50%
+        top: 50%
+        margin-left: -30px
+        margin-top: -30px
+        border-radius: 50%
+        box-sizing: border-box
+        border-bottom: 2px solid #fff
+        border-top: 2px solid #161616
+        border-left: 2px solid #161616
+        border-right: 2px solid #161616
+        position: absolute
+        animation: load 2s infinite linear
+        content: ''
     
 .loader
     width: 100px  
@@ -108,11 +154,11 @@ body
  
 .logo
     text-align: center
-    width: 70%
+    width: 80%
     svg
         width: 100%
         fill: #5d5d5d
-        height: 92px
+        height: 105px
     
 .nav_menu
     width: 70%
@@ -166,30 +212,19 @@ body
     
 .section
     flex-grow: 1
-    
-.scale_img
-    background: url(/img/chain.jpg) no-repeat center bottom
-    background-size: cover
-    top: 0
-    bottom: 0
-    z-index: 0
-    left: 0
-    right: 0
-    position: absolute
-    animation: scale 20s linear forwards
-    
-@keyframes scale
-    0%   
-        transform: scale(1.2)
-    100%  
-        transform: scale(1)
-    
+ 
+.about_list
+    margin-left: 20px
+
 .main
     overflow: hidden
     position: relative
     display: flex
     justify-content: center
     align-items: center
+    background: url(../img/chain.jpg) no-repeat center bottom
+    background-size: cover
+    //background-attachment: fixed
     
 .main_text
     h1
@@ -245,7 +280,8 @@ body
         transform: translateY(12px)
     
 .about
-    background: #000
+    background: url(../img/about.jpg) no-repeat right center
+    background-size: cover
     display: flex
     justify-content: center
     align-items: center
@@ -387,7 +423,7 @@ body
 .portfolio
     position: relative
     overflow: hidden
-    background: rgba(0,0,0,0.6)
+    background: rgba(0,0,0,0.4)
     &:after
         display: table
         content: ''
@@ -441,6 +477,9 @@ body
     background: url(../img/robot.jpg) no-repeat right center
     background-size: cover
 
+.loader_form_container
+    position: relative
+    
 .contact_form
     &:after
         display: table
@@ -454,6 +493,7 @@ body
         padding-left: 10px
         background: none
         color: #fff
+        transition: all .3s ease
         box-sizing: border-box
         height: 36px
         margin-bottom: 15px
@@ -495,19 +535,19 @@ body
      
 .contacts_container
     width: 900px
-    background: rgba(0,0,0,0.5)
+    background: rgba(0,0,0,0.8)
         
 .form_container
     float: left
     width: 40%
-    height: 320px
+    height: 340px
     position: relative
-    padding: 20px 40px
+    padding: 20px 30px
     box-sizing: border-box
     
 #g_map
     width: 60%
-    height: 320px
+    height: 340px
     float: left
     
 .socials
@@ -515,20 +555,106 @@ body
     position: absolute
     left: 0
     right: 0
+    padding: 0 30px
     bottom: 15px
+    cursor: default
+    div
+        display: inline-block
+        vertical-align: middle
     a
         text-decoration: none
         display: inline-block
         margin: 0 2px
+        
+.soc_container
     svg
         width: 30px
         height: 30px
         transition: all .3s ease
         fill: #fff
         
+.download
+    float: right
+    svg
+        width: 30px
+        height: 34px
+        transition: all .3s ease
+        fill: #fff
+        margin-right: 2px
+        vertical-align: middle
+    a
+        color: #fff
+        
+.phone
+    vertical-align: middle
+    margin-bottom: 20px
+    a
+        color: #fff
+        text-decoration: none
+    
+.soc_container
+    float: left
+        
 .form_text
     color: #fff
+    cursor: default
     margin-bottom: 10px
+    
+.form_text_second
+    color: #fff
+    cursor: default
+    margin-bottom: 25px
+
+.phone_icon
+    fill: #fff
+    width: 20px
+    height: 20px
+    vertical-align: middle
+    margin-right: 8px
+    
+a[href^="http://maps.google.com/maps"]
+    display:none !important
+a[href^="https://maps.google.com/maps"]
+    display:none !important
+
+.gmnoprint a, .gmnoprint span, .gm-style-cc 
+    display:none !important
+
+.gmnoprint div 
+    background:none !important
+
+    
+.msg
+    position: absolute
+    left: 0
+    right: 0
+    color: #fff
+    text-align: center
+    top: 50%
+    transform: translateY(-50%)
+    backface-visibility: hidden
+    
+.form_loared_container
+    position: absolute
+    top: 50%
+    left: 50%
+    margin-left: -40px
+    margin-top: -40px
+    
+.form_loader
+    position: absolute
+    top: 0
+    left: 0
+    right: 0
+    bottom: 0
+    z-index: 100
+    display: none
+    
+.contact_form
+    .error
+        border-color: red
+    .not_error
+        border-color: #fff
     
 .close_nav
     position: fixed

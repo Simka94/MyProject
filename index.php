@@ -14,8 +14,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:title" content="<?php echo title; ?>">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$cur_og = ($_GET['lang'] == 'en') ? '/' : '/ru/'; ?>">
-    <meta property="og:image" content="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/img/og_image.png'; ?>">
+    <meta property="og:url" content="<?php echo 'http://'.$_SERVER['SERVER_NAME'].$cur_og = ($_GET['lang'] == 'en') ? '/' : '/ru/'; ?>">
+    <meta property="og:image" content="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/img/og_image.png'; ?>">
     <meta property="og:image:width" content="200">
     <meta property="og:image:height" content="200">
     <meta property="fb:app_id" content="280649482385051"> 
@@ -24,19 +24,20 @@
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="<?php echo title; ?>">
     <meta name="twitter:description" content="<?php echo description; ?>">
-    <meta name="twitter:image" content="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/img/og_image.png'; ?>">
-    <link rel="alternate" hreflang="<?php echo ($_GET['lang'] == 'en') ? 'ru' : 'en'; ?>" href="<?php echo 'http://'.$_SERVER['HTTP_HOST'].$alt = ($_GET['lang'] == 'en') ? '/ru/' : '/'; ?>">
-    <link rel="canonical" href="<?php echo 'http://'.$_SERVER['HTTP_HOST'].'/'; ?>"/>
+    <meta name="twitter:image" content="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/img/og_image.png'; ?>">
+    <link rel="alternate" hreflang="<?php echo ($_GET['lang'] == 'en') ? 'ru' : 'en'; ?>" href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].$alt = ($_GET['lang'] == 'en') ? '/ru/' : '/'; ?>">
+    <link rel="canonical" href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/'; ?>"/>
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;subset=cyrillic" rel="stylesheet">
 </head>
 <body>  
-    <div class="preloader">
+<!--
+    <div id="preloader">
         <div class="loared_container">
             <div class="loader"></div>
         </div> 
     </div>
+-->
     <div class="main_container">
         <div class="nav_overlay"></div>
         <div class="close_nav ssm-toggle-nav">
@@ -53,7 +54,7 @@
                 </div>
                 <div class="nav_menu">
                     <ul class="nav">
-                        <div id="animator"></div>
+                        <li id="animator"></li>
                         <li class="active_anim">
                             <a class="nav_link" rel="nofollow" href="#main"><?php echo main; ?></a>
                         </li>
@@ -76,7 +77,6 @@
         </div>
         <div class="section">
             <div id="main" class="main section_container">
-                <div class="scale_img"></div>
                 <div class="main_text"><h1><?php echo main_text; ?></h1></div>
                 <div class="mouse_container">
                     <a class="nav_link" rel="nofollow" href="#about">
@@ -88,7 +88,7 @@
             </div>
             <div id="about" class="about section_container">
                 <div class="about_text">
-                    Меня зовут Александр мне 23 года и я профессионально занимаюсь созданием сайтов уже более двух лет. Имею большой опыт в создании адаптивных, кроссбраузерных сайтов. В моем арсенале <span>HTML</span>, <span>CSS</span>, <span>JS</span>, <span>jQuery</span>, <span>AJAX</span>, <span>PHP</span>, <span>HTML</span>, <span>Git</span> Примеры моих последних работ вы можете посмотреть ниже.
+                    <?php echo about_text; ?>
                 </div>
             </div>
             <div id="portfolio" class="portfolio section_container">
@@ -200,23 +200,37 @@
                     <div id="g_map"></div>
                     <div class="form_container">
                         <div class="form_text">
-                            Вы мне можете позвонить по номеру +380937267689 или...
+                            <?php echo form_text; ?>
                         </div>
-                        <form class="contact_form">
-                            <input name="user_name" placeholder="<?php echo name; ?>" type="text">
-                            <input name="user_email" placeholder="E-mail" type="text">
-                            <button type="submit"><?php echo send; ?></button>
-                        </form>
+                        <div class="phone">
+                            <a href="tel:+380637267689"><svg class="phone_icon"><use xlink:href="#phone"></use></svg>+38 063 726 76 89</a>
+                        </div>
+                        <div class="loader_form_container">
+                            <div class="form_loader">
+                                <div class="form_loared_container">
+                                    <div class="loader_in"></div>
+                                </div> 
+                            </div>
+                            <form class="contact_form">
+                                <input id="valid_name" autocomplete="off" name="user_name" placeholder="<?php echo name; ?>" type="text">
+                                <input id="valid_mail" autocomplete="off" name="user_email" placeholder="E-mail" type="text">
+                                <button type="submit"><?php echo send; ?></button>
+                            </form>
+                            <div class="msg"></div>
+                        </div>
                         <div class="socials">
-                            <a href="https://vk.com/id44597478" target="_blank">
-                                <svg class="social_vk"><use xlink:href="#fb"></use></svg>
-                            </a>
-                            <a href="https://www.linkedin.com/in/simakalexandr/" target="_blank">
-                                <svg class="social_skype"><use xlink:href="#linin"></use></svg>
-                            </a>
-                            <a href="skype:simaksasha1?chat">
-                                <svg class="social_skype"><use xlink:href="#skype"></use></svg>
-                            </a>
+                            <div class="soc_container">
+                                <a href="https://vk.com/id44597478" target="_blank">
+                                    <svg class="social_vk"><use xlink:href="#fb"></use></svg>
+                                </a>
+                                <a href="https://www.linkedin.com/in/simakalexandr/" target="_blank">
+                                    <svg class="social_skype"><use xlink:href="#linin"></use></svg>
+                                </a>
+                                <a href="skype:simaksasha1?chat">
+                                    <svg class="social_skype"><use xlink:href="#skype"></use></svg>
+                                </a>
+                            </div>
+                            <div class="download"><a href="/download/Resume_Aleksandr_Simak.doc" download><svg class="download_icon"><use xlink:href="#download"></use></svg><?php echo download; ?></a></div>
                         </div>
                     </div>
                 </div>
@@ -225,7 +239,7 @@
     </div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGSztsq2kf9XCZGarVXvP1Tq_hPsmImsQ"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
-<script src="http://labs.rampinteractive.co.uk/touchSwipe/jquery.touchSwipe.min.js"></script>
 <script src="js/js.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;subset=cyrillic" rel="stylesheet">
 </body>
 </html>
