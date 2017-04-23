@@ -31,13 +31,11 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>  
-<!--
     <div id="preloader">
         <div class="loared_container">
             <div class="loader"></div>
         </div> 
     </div>
--->
     <div class="main_container">
         <div class="nav_overlay"></div>
         <div class="close_nav ssm-toggle-nav">

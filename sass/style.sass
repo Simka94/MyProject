@@ -18,7 +18,7 @@ body
     right: 0
     z-index: 10000
     bottom: 0
-    background: #222222
+    background: #000
     
     
 .loader_in
@@ -26,9 +26,9 @@ body
     height: 80px
     border-radius: 50%
     border-bottom: 2px solid #fff
-    border-left: 2px solid #161616
-    border-top: 2px solid #161616
-    border-right: 2px solid #161616
+    border-left: 2px solid #404040
+    border-top: 2px solid #404040
+    border-right: 2px solid #404040
     position: relative
     box-sizing: border-box
     animation: load 2s infinite linear
@@ -42,9 +42,9 @@ body
         border-radius: 50%
         box-sizing: border-box
         border-bottom: 2px solid #fff
-        border-left: 2px solid #161616
-        border-top: 2px solid #161616
-        border-right: 2px solid #161616
+        border-left: 2px solid #404040
+        border-top: 2px solid #404040
+        border-right: 2px solid #404040
         position: absolute
         animation: load 1s infinite linear
         content: ''
@@ -58,9 +58,9 @@ body
         border-radius: 50%
         box-sizing: border-box
         border-bottom: 2px solid #fff
-        border-top: 2px solid #161616
-        border-left: 2px solid #161616
-        border-right: 2px solid #161616
+        border-top: 2px solid #404040
+        border-left: 2px solid #404040
+        border-right: 2px solid #404040
         position: absolute
         animation: load 2s infinite linear
         content: ''
@@ -70,9 +70,9 @@ body
     height: 100px
     border-radius: 50%
     border-bottom: 2px solid #fff
-    border-left: 2px solid #161616
-    border-top: 2px solid #161616
-    border-right: 2px solid #161616
+    border-left: 2px solid #404040
+    border-top: 2px solid #404040
+    border-right: 2px solid #404040
     position: relative
     box-sizing: border-box
     animation: load 2s infinite linear
@@ -86,9 +86,9 @@ body
         border-radius: 50%
         box-sizing: border-box
         border-bottom: 2px solid #fff
-        border-left: 2px solid #161616
-        border-top: 2px solid #161616
-        border-right: 2px solid #161616
+        border-left: 2px solid #404040
+        border-top: 2px solid #404040
+        border-right: 2px solid #404040
         position: absolute
         animation: load 1s infinite linear
         content: ''
@@ -102,9 +102,9 @@ body
         border-radius: 50%
         box-sizing: border-box
         border-bottom: 2px solid #fff
-        border-top: 2px solid #161616
-        border-left: 2px solid #161616
-        border-right: 2px solid #161616
+        border-top: 2px solid #404040
+        border-left: 2px solid #404040
+        border-right: 2px solid #404040
         position: absolute
         animation: load 2s infinite linear
         content: ''
@@ -288,7 +288,7 @@ body
     
 .about_text
     color: #fff
-    max-width: 60%
+    max-width: 50%
     
 .skills_container
     color: #fff
@@ -352,8 +352,10 @@ body
         display: block
         position: relative
         font-weight: 600
-        transition: all .3s ease
+        transition: all .2s ease
         z-index: 1
+        &:active
+            transform: scale(0.9)
         &:hover
             color: #404040
             &::after
@@ -508,7 +510,7 @@ body
         background: none
         box-sizing: border-box
         color: #fff
-        transition: all .3s ease
+        transition: all .2s ease
         height: 36px
         float: right
         font-weight: 600
@@ -517,6 +519,8 @@ body
         z-index: 1
         padding: 0 20px
         position: relative
+        &:active
+            transform: scale(0.9)
         &:hover
             color: #404040
             &::after
