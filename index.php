@@ -25,20 +25,30 @@
     <meta name="twitter:title" content="<?php echo title; ?>">
     <meta name="twitter:description" content="<?php echo description; ?>">
     <meta name="twitter:image" content="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/img/og_image.png'; ?>">
+    <meta name="theme-color" content="#000000">
     <link rel="alternate" hreflang="<?php echo ($_GET['lang'] == 'en') ? 'ru' : 'en'; ?>" href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].$alt = ($_GET['lang'] == 'en') ? '/ru/' : '/'; ?>">
     <link rel="canonical" href="<?php echo 'http://'.$_SERVER['SERVER_NAME'].'/'; ?>"/>
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>  
+<body>
+<div itemscope class="itemscope" itemtype="http://schema.org/Person">
+    <span itemprop="name"><?php echo my_name; ?></span>
+    <img src="/img/simak.jpg" itemprop="image" alt="Photo of <?php echo my_name; ?>"/>
+    <span itemprop="jobTitle"><?php echo job; ?></span>
+    <div itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+    <span itemprop="telephone">+38 063 726 76 89</span>
+    <a href="mailto:simakalexandr94@gmail.com" itemprop="email">simakalexandr94@gmail.com</a>
+    <a href="http://simka.esy.es/" itemprop="url">simka.esy.es</a>
+    </div>  
+</div>
     <div id="preloader">
         <div class="loared_container">
             <div class="loader"></div>
         </div> 
     </div>
     <div class="main_container">
-        <div class="nav_overlay"></div>
-        <div class="close_nav ssm-toggle-nav">
+        <div class="close_nav">
             <span class="top_close"></span>
             <span class="center_close"></span>
             <span class="bottom_close"></span>
@@ -86,7 +96,27 @@
             </div>
             <div id="about" class="about section_container">
                 <div class="about_text">
-                    <?php echo about_text; ?>
+                    <div class="coloumn about_cloumn">
+                        <div class="svg_container">
+                            <svg><use xlink:href="#user"></use></svg>
+                        </div>
+                        <div class="title_about"><?php echo about_me; ?></div>
+                        <?php echo about_me_text; ?>
+                    </div>
+                    <div class="coloumn code_cloumn">
+                        <div class="svg_container">
+                            <svg><use xlink:href="#code"></use></svg>
+                        </div>
+                        <div class="title_about"><?php echo about_skills; ?></div>
+                        <?php echo about_skills_text; ?>
+                    </div>
+                    <div class="coloumn star_cloumn">
+                        <div class="svg_container">
+                            <svg><use xlink:href="#star"></use></svg>
+                        </div>
+                        <div class="title_about"><?php echo about_desires; ?></div>
+                        <?php echo about_desires_text; ?>
+                    </div>
                 </div>
             </div>
             <div id="portfolio" class="portfolio section_container">

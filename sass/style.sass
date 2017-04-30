@@ -7,6 +7,9 @@ body
     background: #000
     transition: all .3s ease
 
+.itemscope
+    display: none
+    
 #preloader
     position: fixed 
     top: 0
@@ -122,13 +125,6 @@ body
 .main_container
     display: flex
     
-.navigation_container
-    width: 200px
-    height: 100vh
-    transition: all .3s ease
-    z-index: 1000
-    min-width: 200px
-    
 .nav_overlay
     display: none
     position: fixed
@@ -229,6 +225,7 @@ body
 .main_text
     h1
         color: #fff
+        text-align: center
         font-weight: 500
         font-size: 38px
         position: relative
@@ -288,8 +285,43 @@ body
     
 .about_text
     color: #fff
-    max-width: 50%
+    width: 75%
+    .coloumn
+        width: 33%
+        padding: 0px 40px
+        box-sizing: border-box
+        float: left
+        text-align: center
+        svg
+            fill: #fff
+            vertical-align: middle
+            
+.title_about
+    font-size: 22px
+    margin-top: 10px
+    margin-bottom: 15px
     
+            
+.svg_container
+    text-align: center
+    height: 120px
+
+.about_cloumn
+    svg
+        width: 100px
+        height: 100px
+
+.code_cloumn
+    svg
+        width: 140px
+        height: 100px
+        
+.star_cloumn
+    svg
+        width: 100px
+        height: 100px
+        
+        
 .skills_container
     color: #fff
     width: 40%
@@ -709,13 +741,68 @@ a[href^="https://maps.google.com/maps"]
         transform: rotate(-45deg)
     .bottom_close
         transform: rotate(45deg)
+  
+        
+.main_container
+    .navigation_container
+        width: 200px
+        height: 100vh
+        transition: all .3s ease
+        z-index: 1000
+        min-width: 200px
+
+.open_opac
+    background: rgba(0,0,0,0.8)
     
      
+@media only screen and (max-width: 1800px)
+    .about_text
+        width: 100%
+        .coloumn
+            padding: 0 20px
+            font-size: 15px
+            
+    .fbs
+        background-size: 170px
+    
+    .didius
+        background-size: 140px
+
+    .school
+        background-size: 220px
+
+    .rollo
+        background-size: 90px
+
+    .sayhi
+        background-size: 80px
+
+    .ubernet
+        background-size: 190px
+
+    .vienterir
+        background-size: 170px
+
+    .gk
+        background-size: 90px
+
+    .sib
+        background-size: 170px
+
 @media only screen and (max-width: 1279px)
+    .nav_link
+        color: #5d5d5d !important
+    #animator
+        display: none
+    .main_container
+        .open_container
+            transform: translateX(0px)
+    .mouse_container
+        display: none
     .work_overlay
         opacity: 1
     .contacts
-        padding: 60px 0
+        padding: 60px 0 
     .work
         height: 260px
         background-position: center 50px
@@ -738,7 +825,7 @@ a[href^="https://maps.google.com/maps"]
         position: fixed
         transform: translateX(-200px)
     .main,.about
-        height: 100vh
+        min-height: 600px
         
     .anim_1,.anim_3
         width: calc(100% - 20px)
@@ -751,13 +838,26 @@ a[href^="https://maps.google.com/maps"]
         height: 280px 
         
 @media only screen and (max-width: 768px)
+    .about_text 
+        .coloumn
+            width: 100%
+            float: none
+            margin-top: 40px
+            &:last-child
+                margin-bottom: 40px
+        
     .work
         width: 100%
     
         
 @media only screen and (max-width: 480px)
-    .scale_img
-        animation: none
+    .about_text 
+        .coloumn
+            font-size: 14px
+    .about_text
+       max-width: 95%
+    #video
+        display: none
     .contacts_container
         width: 90%
         
