@@ -31,7 +31,7 @@
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="overflow_body">
 <div itemscope class="itemscope" itemtype="http://schema.org/Person">
     <span itemprop="name"><?php echo my_name; ?></span>
     <img src="/img/simak.jpg" itemprop="image" alt="Photo of <?php echo my_name; ?>"/>
@@ -267,7 +267,7 @@
     </div>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBGSztsq2kf9XCZGarVXvP1Tq_hPsmImsQ"></script>
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.1.1.min.js"></script>
-<script src="js/js.js"></script>
+<script src="/js/common.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&amp;subset=cyrillic" rel="stylesheet">
 </body>
 </html>

@@ -7,6 +7,9 @@ body
     background: #000
     transition: all .3s ease
 
+.overflow_body
+    overflow-y: hidden
+    
 .itemscope
     display: none
     
@@ -212,6 +215,7 @@ body
 .about_list
     margin-left: 20px
 
+    
 .main
     overflow: hidden
     position: relative
@@ -220,7 +224,6 @@ body
     align-items: center
     background: url(../img/chain.jpg) no-repeat center bottom
     background-size: cover
-    //background-attachment: fixed
     
 .main_text
     h1
@@ -790,6 +793,8 @@ a[href^="https://maps.google.com/maps"]
         background-size: 170px
 
 @media only screen and (max-width: 1279px)
+    .overflow
+        overflow-y: hidden
     .nav_link
         color: #5d5d5d !important
     #animator
@@ -824,9 +829,10 @@ a[href^="https://maps.google.com/maps"]
     .navigation_container
         position: fixed
         transform: translateX(-200px)
-    .main,.about
+    .about
         min-height: 600px
-        
+    .main
+        height: 100vh
     .anim_1,.anim_3
         width: calc(100% - 20px)
     .anim_2,.anim_4
@@ -841,7 +847,7 @@ a[href^="https://maps.google.com/maps"]
     .about_text 
         .coloumn
             width: 100%
-            float: none
+            float: none 
             margin-top: 40px
             &:last-child
                 margin-bottom: 40px
