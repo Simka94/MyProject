@@ -32,6 +32,14 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="overflow_body">
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-96899264-1', 'auto');
+  ga('send', 'pageview');
+</script>
 <div itemscope class="itemscope" itemtype="http://schema.org/Person">
     <span itemprop="name"><?php echo my_name; ?></span>
     <img src="/img/simak.jpg" itemprop="image" alt="Photo of <?php echo my_name; ?>"/>
@@ -218,7 +226,7 @@
                     <span class="anim_4"></span>
                     <div class="work_overlay">
                         <div class="work_link">
-                            <a href="https://vinterior.com.ua/" rel="nofollow" target="_blank"><?php echo look; ?></a>
+                            <a href="http://ekovit.ua/" rel="nofollow" target="_blank"><?php echo look; ?></a>
                         </div>
                     </div>
                 </div>
