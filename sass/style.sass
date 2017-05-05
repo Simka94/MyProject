@@ -222,8 +222,19 @@ body
     display: flex
     justify-content: center
     align-items: center
-    background: url(../img/chain.jpg) no-repeat center bottom
-    background-size: cover
+    &:before
+        background: url(../img/chain.jpg) no-repeat center bottom
+        background-size: cover
+        position: fixed
+        will-change: transform
+        content: ''
+        top: 0
+        left: 0
+        right: 0
+        bottom: 0
+        display: block
+        z-index: -1
+        
     
 .main_text
     h1
@@ -857,6 +868,8 @@ a[href^="https://maps.google.com/maps"]
     
         
 @media only screen and (max-width: 480px)
+    .portfolio
+        background: #000
     .about_text 
         .coloumn
             font-size: 14px
