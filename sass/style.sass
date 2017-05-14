@@ -222,6 +222,7 @@ body
     display: flex
     justify-content: center
     align-items: center
+    background: linear-gradient(to top, rgba(0,0,0,0), rgba(0,0,0,0.7))
     &:before
         background: url(../img/chain.jpg) no-repeat center bottom
         background-size: cover
@@ -244,7 +245,6 @@ body
         font-size: 38px
         position: relative
         z-index: 1
-        text-shadow: 0px 0px 8px #000
     
 
 
@@ -868,6 +868,11 @@ a[href^="https://maps.google.com/maps"]
     
         
 @media only screen and (max-width: 480px)
+    .main_text
+        transform: none !important
+    .main
+        &:before
+            position: absolute
     .portfolio
         background: #000
     .about_text 
