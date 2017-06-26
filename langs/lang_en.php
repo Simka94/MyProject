@@ -1,5 +1,5 @@
 <?php
-define('title','Aleksandr Simak — Front-end Developer');
+define('title','Aleksandr Simak — Front-end Developer ');
 define('my_name','Aleksandr Simak');
 define('job','Front-end Developer');
 define('description','Front-end Developer producing high quality responsive websites.');

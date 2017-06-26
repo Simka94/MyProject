@@ -31,7 +31,7 @@
     <link rel="shortcut icon" href="/img/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="overflow_body">
+<body>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -93,7 +93,7 @@
         </div>
         <div class="section">
             <div id="main" class="main section_container">
-                <div class="main_text"><h1><?php echo main_text; ?></h1></div>
+                <div class="main_text"><h1 class="animation_title"><?php echo main_text; ?></h1></div>
                 <div class="mouse_container">
                     <a class="nav_link" rel="nofollow" href="#about">
                         <div class="mouse">
