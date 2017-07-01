@@ -11,7 +11,6 @@ $(window).on('scroll',function(){
 
 $(window).on('scroll',function(){
 	var offset_top = $(document).scrollTop(),
-			main_height = $('.main').innerHeight();
 			about = $('.about').offset().top,
 			about_height = $('.about').innerHeight() / 2;
 	if(offset_top >= about - about_height){
@@ -22,11 +21,6 @@ $(window).on('scroll',function(){
 				$('.coloumn').eq(i).addClass('animation_motion');
 			},s)
 		})
-	}
-	if(offset_top > main_height){
-		$('.main').addClass('z_index');
-	}else if(offset_top < main_height){
-		$('.main').removeClass('z_index');
 	}
 })
 
