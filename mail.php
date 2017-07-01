@@ -3,7 +3,7 @@ $lang = $_GET["lang"];
 $user_name = $_POST["user_name"];
 $user_email = $_POST["user_email"];
 
-$to = "simakalexandr94@gmail.com";
+$to = "alexandersimak94@gmail.com";
 $subject = "HTML email";
 
 $message = "$user_name $user_email";

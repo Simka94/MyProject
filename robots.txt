@@ -1,3 +1,5 @@
-Host: simka.esy.es
-User-agent: *
+User-Agent: *
+Disallow: 
 Allow: /
+
+Sitemap: http://alexander-simak.esy.es/sitemap.xml

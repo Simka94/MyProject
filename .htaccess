@@ -1,8 +1,8 @@
 Options +FollowSymlinks
 RewriteEngine On
 
-RewriteCond %{HTTP_HOST} ^www.simka.esy.es
-RewriteRule ^(.*)$ http://simka.esy.es/$1 [R=permanent,L]
+RewriteCond %{HTTP_HOST} ^www.alexander-simak.esy.es
+RewriteRule ^(.*)$ http://alexander-simak.esy.es/$1 [R=permanent,L]
 
 RewriteBase /
 

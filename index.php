@@ -20,7 +20,7 @@
     <meta property="og:image:height" content="200">
     <meta property="fb:app_id" content="280649482385051"> 
     <meta property="og:description" content="<?php echo description; ?>">
-    <meta property="og:site_name" content="Aleksandr Simak">
+    <meta property="og:site_name" content="Aleksander Simak Portfolio">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="<?php echo title; ?>">
     <meta name="twitter:description" content="<?php echo description; ?>">
@@ -32,14 +32,6 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-  ga('create', 'UA-96899264-1', 'auto');
-  ga('send', 'pageview');
-</script>
 <div itemscope class="itemscope" itemtype="http://schema.org/Person">
     <span itemprop="name"><?php echo my_name; ?></span>
     <img src="/img/simak.jpg" itemprop="image" alt="Photo of <?php echo my_name; ?>"/>

@@ -1,6 +1,6 @@
 <?php
-define('title','Aleksandr Simak — Front-end Developer ');
-define('my_name','Aleksandr Simak');
+define('title','Aleksander Simak — Front-end Developer ');
+define('my_name','Aleksander Simak');
 define('job','Front-end Developer');
 define('description','Front-end Developer producing high quality responsive websites.');
 define('about_me_text','

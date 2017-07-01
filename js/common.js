@@ -1,1 +1,153 @@
-function type(){select_caption.html(caption.substr(0,captionLength++)),captionLength<caption.length+1&&setTimeout("type()",100)}$.post("../img/sprite.svg",function(t){$("body").prepend(t)},"html");var parallax=$(".main_text");$(window).on("scroll",function(){var t=$(document).scrollTop();parallax.css({transform:"translateY("+t/2.2+"px)"})}),$(window).on("scroll",function(){var t=$(document).scrollTop(),e=$(".about").offset().top,o=$(".about").innerHeight()/2;if(t>=e-o){var a=0;$(".coloumn").each(function(t){a+=300,setTimeout(function(){$(".coloumn").eq(t).addClass("animation_motion")},a)})}});var root=$("html, body");$(".nav_link").on("click",function(t){t.preventDefault(),root.stop().animate({scrollTop:$($.attr(this,"href")).offset().top},700)}),setTimeout(function(){var t=$("#preloader");t.addClass("close_preloader").delay(2e3).queue(function(){t.remove()})},2e3);var captionLength=0,select_caption=$(".animation_title"),caption=select_caption.text();select_caption.text(""),$(document).ready(function(){setTimeout(function(){type()},2400)});var myLatLng={lat:50.412405,lng:30.650252},image="http://simka.esy.es/img/pin.png",map=new google.maps.Map(document.getElementById("g_map"),{zoom:17,center:myLatLng,disableDefaultUI:!0,styles:[{stylers:[{hue:"#ff1a00"},{invert_lightness:!0},{saturation:-100},{lightness:33},{gamma:.5}]},{featureType:"all",elementType:"labels.icon",stylers:[{visibility:"off"}]},{featureType:"water",elementType:"geometry",stylers:[{color:"#2D333C"}]}]}),marker=new google.maps.Marker({position:myLatLng,map:map,icon:image});$("#valid_name").on("input focus",function(){var t=$(this).val(),e=/^[a-zA-Zа-яА-ЯЁёїЇіІ]+[a-zA-Zа-яА-ЯЁёїЇіІ]+$/;t.length>=2&&""!=t&&e.test(t)?$(this).removeClass("error").addClass("not_error"):$(this).removeClass("not_error").addClass("error")}),$("#valid_mail").on("input focus",function(){var t=$(this).val(),e=/^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;""!=t&&e.test(t)?$(this).removeClass("error").addClass("not_error"):$(this).removeClass("not_error").addClass("error")}),$(".contact_form").submit(function(t){if(t.preventDefault(),2==$(".not_error").length){setTimeout(function(){$(".form_loader").fadeIn()},600),$(this).fadeTo("slow",0);var e=$(".contact_form").serialize();$.ajax({type:"POST",url:"mail.php",data:e,success:function(t){$("#valid_name,#valid_mail").removeClass("not_error error"),setTimeout(function(){$(".contact_form")[0].reset(),$(".form_loader").fadeOut()},2e3),setTimeout(function(){$(".msg").text(t)},2600),setTimeout(function(){$(".msg").text(""),$(".contact_form").fadeTo("slow",1)},5e3)}})}else $("#valid_name,#valid_mail").addClass("error")});var sections=$(".section_container"),nav=$(".nav li"),animator=$("#animator");$(window).on("scroll",function(){var t=$(this).scrollTop();sections.each(function(){var e=$(this).offset().top-$(this).outerHeight()/2,o=e+$(this).outerHeight();t>=e&&o>=t&&(nav.find("a").parent().removeClass("active_anim"),sections.removeClass("active_anim"),$(this).addClass("active_anim"),nav.find('a[href="#'+$(this).attr("id")+'"]').parent().addClass("active_anim"),"main"==$(this).attr("id")?animator.css({top:"16px"}):"about"==$(this).attr("id")?animator.css({top:"62px"}):"portfolio"==$(this).attr("id")?animator.css({top:"110px"}):"contacts"==$(this).attr("id")&&animator.css({top:"157px"}))})}),$(".close_nav").on("click",function(){var t=$(".navigation_container"),e=$(".close_nav");$("body");e.toggleClass("opened"),t.toggleClass("open_container"),$(document).click(function(o){$(o.target).closest(".close_nav,.navigation_container").length||(e.removeClass("opened"),t.removeClass("open_container"),o.stopPropagation())})});
+$.post('../img/sprite.svg', function(data){
+  $('body').prepend(data);
+},'html');
+
+var parallax = $('.main_text');
+$(window).on('scroll',function(){
+	var offset_top = $(document).scrollTop();
+	parallax.css({'transform': 'translateY('+offset_top / 2.2+'px)'})
+})
+
+
+$(window).on('scroll',function(){
+	var offset_top = $(document).scrollTop(),
+			about = $('.about').offset().top,
+			about_height = $('.about').innerHeight() / 2;
+	if(offset_top >= about - about_height){
+		var s = 0;
+		$('.coloumn').each(function(i){
+			s = s + 300;
+			setTimeout(function(){
+				$('.coloumn').eq(i).addClass('animation_motion');
+			},s)
+		})
+	}
+})
+
+var root = $('html, body');
+$('.nav_link').on('click',function(event) {
+    event.preventDefault();
+    root.stop().animate({
+        scrollTop: $($.attr(this, 'href')).offset().top
+    }, 700);
+});
+
+setTimeout(function(){
+    var loader = $('#preloader');
+    loader.addClass('close_preloader').delay(2000).queue(function(){
+			loader.remove();
+		})
+},2000);
+
+var captionLength = 0,
+		select_caption = $('.animation_title'),
+		caption = select_caption.text();
+select_caption.text('');
+$(document).ready(function(){
+	setTimeout(function(){
+		type();
+	},2400)
+})
+function type() {
+	select_caption.html(caption.substr(0, captionLength++));
+	if(captionLength < caption.length+1) {
+			setTimeout('type()', 100);
+	}
+}
+
+var myLatLng = {lat: 50.412405, lng: 30.650252},
+    image = 'http://alexander-simak.esy.es/img/pin.png',
+    map = new google.maps.Map(document.getElementById('g_map'), {zoom: 17,center: myLatLng,disableDefaultUI: true,styles: [{"stylers": [{"hue": "#ff1a00"},{"invert_lightness": true},{"saturation": -100},{"lightness": 33},{"gamma": 0.5}]},{"featureType": "all","elementType": "labels.icon","stylers": [{"visibility": "off"}]},{"featureType": "water","elementType": "geometry","stylers": [{"color": "#2D333C"}]}]}),
+    marker = new google.maps.Marker({position: myLatLng,map: map,icon: image});
+
+$('#valid_name').on('input focus', function(){ 
+    var val = $(this).val(),
+        rv_name = /^[a-zA-Zа-яА-ЯЁёїЇіІ]+[a-zA-Zа-яА-ЯЁёїЇіІ]+$/;
+    if(val.length >= 2 && val != '' && rv_name.test(val)){
+        $(this).removeClass('error').addClass('not_error');
+    }else{ 
+        $(this).removeClass('not_error').addClass('error');
+    }        
+});
+
+$('#valid_mail').on('input focus', function(){ 
+    var val = $(this).val(),
+        rv_email = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
+    if(val != '' && rv_email.test(val)){
+        $(this).removeClass('error').addClass('not_error');
+    }else{
+        $(this).removeClass('not_error').addClass('error');
+    } 
+});
+
+$('.contact_form').submit(function(event){
+    event.preventDefault();
+    if($('.not_error').length == 2){
+        setTimeout(function(){
+            $('.form_loader').fadeIn();
+        },600);
+        $(this).fadeTo('slow', 0);
+        var msg = $('.contact_form').serialize();
+            $.ajax({
+              type: 'POST',
+              url: 'mail.php',
+              data: msg,
+              success: function(data) {
+                $('#valid_name,#valid_mail').removeClass('not_error error');
+                setTimeout(function(){
+                    $('.contact_form')[0].reset();
+                    $('.form_loader').fadeOut();
+                },2000);
+                setTimeout(function(){
+                  $('.msg').text(data);  
+                },2600)
+                setTimeout(function(){
+                    $('.msg').text('');
+                    $('.contact_form').fadeTo('slow', 1);
+                },5000);
+              }
+            });
+        }else{
+            $('#valid_name,#valid_mail').addClass('error');
+        }
+});
+
+var sections = $('.section_container'),
+    nav = $('.nav li'),
+    animator = $('#animator');
+$(window).on('scroll', function () {
+  var cur_pos = $(this).scrollTop();
+  sections.each(function() {
+    var top = $(this).offset().top - ($(this).outerHeight() / 2),
+        bottom = top + $(this).outerHeight();
+    if (cur_pos >= top && cur_pos <= bottom) {
+        nav.find('a').parent().removeClass('active_anim');
+        sections.removeClass('active_anim');
+        $(this).addClass('active_anim');
+        nav.find('a[href="#'+$(this).attr('id')+'"]').parent().addClass('active_anim');
+        if($(this).attr('id') == 'main'){
+            animator.css({'top':'16px'});
+        }else if($(this).attr('id') == 'about'){
+            animator.css({'top':'62px'});
+        }else if($(this).attr('id') == 'portfolio'){
+            animator.css({'top':'110px'});
+        }else if($(this).attr('id') == 'contacts'){
+            animator.css({'top':'157px'});
+        }
+    }
+  });
+});
+	
+$('.close_nav').on('click', function(){
+    var nav_cont = $('.navigation_container'),
+        close_btn = $('.close_nav'),
+        root = $('body');
+    close_btn.toggleClass('opened');
+    nav_cont.toggleClass('open_container');
+    $(document).click(function(event) {
+        if ($(event.target).closest(".close_nav,.navigation_container").length) return;
+            close_btn.removeClass('opened');
+            nav_cont.removeClass('open_container');
+        event.stopPropagation();
+    });
+});

@@ -5,13 +5,10 @@
       xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <url>
-  <loc>http://simka.esy.es/</loc>
+  <loc>http://alexander-simak.esy.es/</loc>
 </url>
 <url>
-  <loc>http://simka.esy.es/ru/</loc>
-</url>
-<url>
-  <loc>http://simka.esy.es/download/Resume_Aleksandr_Simak.doc</loc>
-  <lastmod>2017-04-30T20:32:30+00:00</lastmod>
+  <loc>http://alexander-simak.esy.es/download/Resume_Aleksandr_Simak.doc</loc>
+  <lastmod>2017-07-01T17:41:11+00:00</lastmod>
 </url>
 </urlset>
