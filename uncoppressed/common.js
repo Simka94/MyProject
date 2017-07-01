@@ -11,6 +11,7 @@ $(window).on('scroll',function(){
 
 $(window).on('scroll',function(){
 	var offset_top = $(document).scrollTop(),
+			main_height = $('.main').innerHeight();
 			about = $('.about').offset().top,
 			about_height = $('.about').innerHeight() / 2;
 	if(offset_top >= about - about_height){
@@ -21,6 +22,11 @@ $(window).on('scroll',function(){
 				$('.coloumn').eq(i).addClass('animation_motion');
 			},s)
 		})
+	}
+	if(offset_top > main_height){
+		$('.main').addClass('z_index');
+	}else if(offset_top < main_height){
+		$('.main').removeClass('z_index');
 	}
 })
 
@@ -56,11 +62,11 @@ function type() {
 }
 
 var myLatLng = {lat: 50.412405, lng: 30.650252},
-    image = 'http://simka.esy.es/img/pin.png',
+    image = 'http://alexander-simak.esy.es/img/pin.png',
     map = new google.maps.Map(document.getElementById('g_map'), {zoom: 17,center: myLatLng,disableDefaultUI: true,styles: [{"stylers": [{"hue": "#ff1a00"},{"invert_lightness": true},{"saturation": -100},{"lightness": 33},{"gamma": 0.5}]},{"featureType": "all","elementType": "labels.icon","stylers": [{"visibility": "off"}]},{"featureType": "water","elementType": "geometry","stylers": [{"color": "#2D333C"}]}]}),
     marker = new google.maps.Marker({position: myLatLng,map: map,icon: image});
 
-$('#valid_name').on('input focus', function(){ 
+$('#valid_name').on('input', function(){ 
     var val = $(this).val(),
         rv_name = /^[a-zA-Zа-яА-ЯЁёїЇіІ]+[a-zA-Zа-яА-ЯЁёїЇіІ]+$/;
     if(val.length >= 2 && val != '' && rv_name.test(val)){
@@ -70,7 +76,7 @@ $('#valid_name').on('input focus', function(){
     }        
 });
 
-$('#valid_mail').on('input focus', function(){ 
+$('#valid_mail').on('input', function(){ 
     var val = $(this).val(),
         rv_email = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+\.([a-zA-Z])+([a-zA-Z])+/;
     if(val != '' && rv_email.test(val)){

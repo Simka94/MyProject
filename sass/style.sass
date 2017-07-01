@@ -244,9 +244,12 @@ body
 		right: 0
 		bottom: 0
 		display: block
-		z-index: -1
+		z-index: -2
 		
-	
+.z_index
+	&:before
+		z-index: -5
+
 .animation_title
 		color: #fff
 		text-align: center
@@ -314,6 +317,12 @@ body
 .about
 	background: url(../img/about.jpg) no-repeat right center
 	background-size: cover
+	display: flex
+	justify-content: center
+	align-items: center
+
+.skills
+	background: #000
 	display: flex
 	justify-content: center
 	align-items: center
@@ -550,8 +559,19 @@ body
 	display: flex
 	justify-content: center
 	align-items: center
-	background: url(../img/robot.jpg) no-repeat right center
 	background-size: cover
+	&:before
+		background: url(../img/robot.jpg) no-repeat center bottom
+		background-size: cover
+		position: fixed
+		will-change: transform
+		content: ''
+		top: 0
+		left: 0
+		right: 0
+		bottom: 0
+		display: block
+		z-index: -3
 
 .loader_form_container
 	position: relative
