@@ -42,7 +42,7 @@
     <a href="http://simka.esy.es/" itemprop="url">simka.esy.es</a>
     </div>  
 </div>
-    <div id="preloader">
+    <div id="preloader" style="position:fixed;top:0;display:flex;justify-content: center;align-items:center;left:0;transition:all 2s ease-in-out;right:0;z-index: 10000;bottom: 0;background: #000;">
         <div class="loared_container">
             <div class="loader"></div>
         </div> 
