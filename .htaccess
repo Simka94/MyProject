@@ -1,8 +1,8 @@
 Options +FollowSymlinks
 RewriteEngine On
 
-RewriteCond %{HTTP_HOST} ^www.alexander-simak.esy.es
-RewriteRule ^(.*)$ http://alexander-simak.esy.es/$1 [R=permanent,L]
+RewriteCond %{HTTP_HOST} ^www.alexander-simak.cx.ua$ [NC]
+RewriteRule ^(.*)$ http://alexander-simak.cx.ua/$1 [R=301,L]
 
 RewriteBase /
 

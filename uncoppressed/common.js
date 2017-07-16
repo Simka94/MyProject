@@ -63,7 +63,7 @@ function type() {
 }
 
 var myLatLng = {lat: 50.412405, lng: 30.650252},
-    image = 'http://alexander-simak.esy.es/img/pin.png',
+    image = 'https://alexander-simak.cx.ua/img/pin.png',
     map = new google.maps.Map(document.getElementById('g_map'), {zoom: 17,center: myLatLng,disableDefaultUI: true,styles: [{"stylers": [{"hue": "#ff1a00"},{"invert_lightness": true},{"saturation": -100},{"lightness": 33},{"gamma": 0.5}]},{"featureType": "all","elementType": "labels.icon","stylers": [{"visibility": "off"}]},{"featureType": "water","elementType": "geometry","stylers": [{"color": "#2D333C"}]}]}),
     marker = new google.maps.Marker({position: myLatLng,map: map,icon: image});
 
